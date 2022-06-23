@@ -1,0 +1,98 @@
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section h1 {
+    margin-top: 50px;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.decoration {
+    content: '';
+    width: 130px;
+    height: 1px;
+    border-bottom: 5px solid skyblue;
+    margin-bottom: 30px;
+}
+
+.item_tours {
+    width: 100%;
+    margin-top: 35px;
+    box-shadow: 0 0 5px 2px rgba(0 , 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item_tours img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.item_tours .price_line {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.item_tours .price_line strong {
+    padding: 5px;
+    background-color: rgba(0, 255, 255, 0.379);
+    border-radius: 4px;
+}
+
+.item_tours .price_line h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.item_tours p {
+    padding: 20px;
+}
+
+.item_tours span {
+    opacity: 0.6;
+}
+
+.item_tours p button {
+    margin-left: 5px;
+    border: none;
+    background-color: white;
+    color: skyblue;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.delete {
+    border: 1px solid red;
+    color: red;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background-color: white;
+    font-size: 15px;
+    width: 250px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.refresh {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
