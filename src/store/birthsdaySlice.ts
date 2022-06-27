@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { birthsdayList } from "../Base/baseResponse";
+import { birthsdayList } from "../base/baseResponse";
 
 
 type BirthsdayList = {

@@ -11,6 +11,9 @@ const NavBar: FC = () => {
       <NavLink to="/tours" className="navLink">
         Tours
       </NavLink>
+      <NavLink to="/reviews" className="navLink">
+        Reviews
+      </NavLink>
     </nav>
   );
 }

@@ -1,13 +1,12 @@
-import React, { FC, useState } from "react";
-import { useAppDispatch } from "../../hook/useStore";
-import { deleteToursItem } from "../../store/toursSlice";
+import React, { FC } from "react";
+import { useAppDispatch, useAppSelector } from "../../hook/useStore";
+import { deleteToursItem, setActiveFullBody } from "../../store/toursSlice";
 import cl from "../../styles/tours.module.css";
 
 interface ToursList {
   id: number;
   img: string;
   title: string;
-  shortBody: string;
   fullBody: string;
   price: string;
 }
@@ -15,14 +14,13 @@ interface ToursList {
 const ItemTours: FC<ToursList> = ({
   id,
   title,
-  shortBody,
   fullBody,
   price,
   img,
 }) => {
 
-  const [state, setState] = useState<boolean>(false);
   const dispatch = useAppDispatch()
+  const { activeFullBody } = useAppSelector((state) => state.tours);
 
   return (
     <div className={cl.item_tours}>
@@ -32,16 +30,17 @@ const ItemTours: FC<ToursList> = ({
         <strong>{price}</strong>
       </div>
       <p>
-        <span>{state ? fullBody : shortBody}</span>
-        <button
-          onClick={() => {
-            setState(!state);
-          }}
-        >
-          {state ? "Show Less" : "Read More"}
+        <span>{activeFullBody ? fullBody : fullBody.substring(0, 200) + '...'}</span>
+        <button onClick={() => {
+          dispatch(setActiveFullBody());
+        }}>
+          {activeFullBody ? "Show Less" : "Read More"}
         </button>
       </p>
-      <button onClick={() => dispatch(deleteToursItem(id))} className={cl.delete}>
+      <button
+        onClick={() => dispatch(deleteToursItem(id))}
+        className={cl.delete}
+      >
         Not interested
       </button>
     </div>

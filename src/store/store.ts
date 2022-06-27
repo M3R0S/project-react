@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import birthsdaySlice from "./birthsdaySlice";
+import reviewsSlice from './reviewsSlice'
 import toursSlice from "./toursSlice";
 
 const store = configureStore({
   reducer: {
     birthsday: birthsdaySlice,
     tours: toursSlice,
+    reviews: reviewsSlice,
   },
 });
 
