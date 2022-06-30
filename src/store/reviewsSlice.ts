@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { baseReviewsItem, reviewsList } from "../base/baseResponse";
+import { reviewsList } from "../base/baseResponse";
 
 type ReviewsList = {
   id: number;
@@ -16,7 +16,7 @@ type ReviewsState = {
 };
 
 const initialState: ReviewsState = {
-  listItem: baseReviewsItem,
+  listItem: reviewsList[0],
   loading: false,
   error: null,
 };
